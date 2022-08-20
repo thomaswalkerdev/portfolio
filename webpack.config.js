@@ -8,13 +8,17 @@ const path = require("path");
 module.exports = {
   mode: "development",
   entry: "./src/index.tsx",
+  devServer: {
+    historyApiFallback: true,
+  },
   resolve: {
     extensions: [".js", ".jsx", ".ts", ".tsx"],
     alias: {
       "@": path.resolve(__dirname, "src/"),
-      "@assets": path.resolve(__dirname, "src/assets"),
-      "@styles": path.resolve(__dirname, "src/styles"),
-      "@components": path.resolve(__dirname, "src/components"),
+      assets: path.resolve(__dirname, "src/assets"),
+      styles: path.resolve(__dirname, "src/styles"),
+      components: path.resolve(__dirname, "src/components"),
+      views: path.resolve(__dirname, "src/views"),
     },
   },
   module: {
